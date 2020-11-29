@@ -16,6 +16,11 @@ func (h CreateHandler) UserCreate(event *api.UserCreate) error {
 	return nil
 }
 
+func (h CreateHandler) UserSuspend(event *api.UserSuspend) error {
+	fmt.Printf("got UserSuspend: %v", event)
+	return nil
+}
+
 func CreateUserConsumer() {
 	handler := CreateHandler{}
 
