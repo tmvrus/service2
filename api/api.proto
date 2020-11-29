@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.affise.stats;
+
+option go_package = "github.com/tmvrus/service2/api";
+
+
+message OfferEvent {
+    string id = 1;
+
+    oneof Event {
+        OfferCreate offer_create = 2;
+        OfferDelete offer_delete = 3;
+    }
+
+}
+
+message OfferCreate {
+    uint32 id = 1;
+    string title = 2;
+    string advertiser_id = 3;
+    string date = 4;
+}
+
+message OfferDelete {
+    uint32 id = 1;
+    string date = 2;
+}
